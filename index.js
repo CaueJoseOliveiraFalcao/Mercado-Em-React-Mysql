@@ -16,8 +16,9 @@ app.get('/products' , (req,res) => {
     });
 });
 app.post('/products' , (req , res) => {
-    const SqlComandLine = `insert into product(productid, producttitle , productdescription , productprice , availableQuantity , productthumbnail)
-        values(?)`;
+    const SqlComandLine = 
+    `insert into products(productid, producttitle , productdescription , productprice , availableQuantity , productthumbnail)
+    values(?)`;
     const values = [...Object.values(req.body)];
     console.log('insert' , values);
     db.query(SqlComandLine , [values] , (error , data) => {
@@ -28,7 +29,7 @@ app.post('/products' , (req , res) => {
     })
 })
 app.get('/products/:productid' , (req , res) => {
-    const SqlComandLine  = 'SELECT * FROM product where productid=?';
+    const SqlComandLine  = 'select * from products where productid=?';
     const id = req.params.productid;
     db.query(SqlComandLine , [id] , (error , data) =>{
         console.log(error , data);
@@ -68,6 +69,7 @@ process.on('SIGINT', () => {
 //db
 
 const mysql = require('mysql');
+const e = require("cors");
 console.log(process.env);
 console.log(process.env.DB_PASSWORD)
 
@@ -75,5 +77,5 @@ const db = mysql.createConnection({
     host : 'localhost',
     user : process.env.DB_USERNAME,
     password : process.env.DB_PASSWORD,
-    database: "products",
+    database: "mercado",
 });
