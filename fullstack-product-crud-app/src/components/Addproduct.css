@@ -1,0 +1,25 @@
+form {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+.box-form{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin: 0.7rem 0;
+    align-items: center;
+}
+.box-form label{
+    margin-right: 0.5rem;
+}
+.box-form input {
+    padding: 0.3rem;
+}
+.fix{
+    display: flex;
+    justify-content: center;
+}

@@ -26,7 +26,6 @@ const Product = ({
                 ? `In Stock : ${availableQuantity}`
                 : 'Out of Stock'
             }
-            
             </p>
         </div>
     )
