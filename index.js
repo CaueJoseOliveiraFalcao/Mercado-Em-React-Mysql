@@ -17,7 +17,7 @@ app.get('/products' , (req,res) => {
 });
 app.post('/products' , (req , res) => {
     const SqlComandLine = 
-    `insert into products( producttitle , productdescription , productprice , availableQuantity , productthumbnail)
+    `insert into products( producttitle , productdescription , productprice , availableQuantity)
     values(?)`;
     const values = [...Object.values(req.body)];
     console.log('insert' , values);

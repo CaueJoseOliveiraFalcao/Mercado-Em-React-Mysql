@@ -7,16 +7,9 @@ const Product = ({
     productdescription,
     productprice,
     availableQuantity,
-    productthumbnail,
 }) =>{
     return(
         <div className="Card">
-            {productthumbnail ? (
-                <img src={`${BASE_API_URL}/upload/${productthumbnail}`}/>
-
-            ): (
-                <img src={`${BASE_API_URL}/upload/sample.png`}/>
-            )}
             <h1 className="Card_Title">{producttitle}</h1>
             <p className="Card_Descripition">{productdescription}</p>
             <p className="Card_Price">{productprice}</p>
